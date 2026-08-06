@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contact Us | VINYASA KITCHEN EQUIPMENT</title>
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <meta name="theme-color" content="#01953f">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ===== Page banner ===== */
+        .vk-page-banner {
+            position: relative;
+            background: linear-gradient(90deg,
+                    rgba(6, 20, 38, 0.95) 0%,
+                    rgba(6, 20, 38, 0.95) 30%,
+                    rgba(6, 20, 38, 0.85) 40%,
+                    rgba(6, 20, 38, 0.65) 50%,
+                    rgba(6, 20, 38, 0.35) 70%,
+                    rgba(6, 20, 38, 0) 100%),
+                url('images/vinyasa-kitchen-equipment-banner2.jpg') center/cover no-repeat;
+            padding: 130px 0 50px;
+            overflow: hidden;
+        }
+
+        .vk-page-banner::before {
+            content: "";
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background: rgba(0, 142, 175, .18);
+        }
+
+        .vk-crumb {
+            color: #ffd8ce;
+            letter-spacing: 2px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .vk-crumb a {
+            color: #ffd8ce;
+            text-decoration: none;
+        }
+
+        .vk-crumb i {
+            font-size: 10px;
+            margin: 0 6px;
+            vertical-align: middle;
+        }
+
+        .vk-page-banner h1 {
+            color: #fff;
+            font-weight: 800;
+            font-size: clamp(32px, 4.5vw, 54px);
+            max-width: 720px;
+            line-height: 1.15;
+        }
+
+        .vk-page-banner h1 span {
+            color: var(--vk-red);
+        }
+
+        .vk-page-banner p {
+            color: #c8d0e0;
+            max-width: 560px;
+            font-size: 17px;
+            margin-top: 16px;
+        }
+
+        .vk-eyebrow {
+            color: var(--vk-red);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .vk-heading {
+            color: var(--dark);
+            font-weight: 800;
+            font-size: clamp(26px, 3vw, 38px);
+        }
+
+        .vk-heading span {
+            color: var(--vk-red);
+        }
+
+        .vk-sub {
+            color: var(--text);
+            max-width: 640px;
+        }
+
+        /* ===== Contact info cards ===== */
+        .vk-contact-cards {
+            padding: 100px 0 40px;
+        }
+
+        .vk-cc-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 34px 28px;
+            height: 100%;
+            box-shadow: 0 12px 32px rgba(12, 72, 135, .08);
+            text-align: center;
+            transition: .3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .vk-cc-card:hover {
+            transform: translateY(-8px);
+            border-bottom-color: var(--vk-red);
+            box-shadow: 0 22px 45px rgba(12, 72, 135, .14);
+        }
+
+        .vk-cc-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            margin: 0 auto 18px;
+            background: var(--vk-red);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .vk-cc-card h6 {
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .vk-cc-card p {
+            color: var(--text);
+            font-size: 14.5px;
+            margin-bottom: 4px;
+        }
+
+        .vk-cc-card a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .vk-cc-card a:hover {
+            color: var(--vk-red);
+        }
+
+        /* ===== Form + Map ===== */
+        .vk-contact-main {
+            /* padding: 70px 0 150px; */
+            height: fit-content
+        }
+
+        .vk-form-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 44px 40px;
+            box-shadow: 0 15px 40px rgba(12, 72, 135, .08);
+            height: 100%;
+        }
+
+        .vk-form-card .form-label {
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 13.5px;
+            margin-bottom: 6px;
+        }
+
+        .vk-form-card .form-control,
+        .vk-form-card .form-select {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 14.5px;
+        }
+
+        .vk-form-card .form-control:focus,
+        .vk-form-card .form-select:focus {
+            border-color: var(--vk-red);
+            box-shadow: 0 0 0 3px rgba(0, 142, 175, .12);
+        }
+
+        .vk-submit-btn {
+            background: var(--vk-red);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 14px 34px;
+            font-weight: 700;
+            letter-spacing: .4px;
+        }
+
+        .vk-submit-btn:hover {
+            background: var(--vk-red);
+            color: #fff;
+        }
+
+        .vk-map-wrap {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(12, 72, 135, .08);
+            height: 100%;
+            min-height: 340px;
+        }
+
+        .vk-map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 340px;
+            border: 0;
+            display: block;
+        }
+
+        .vk-hours-card {
+            background: var(--dark);
+            color: #fff;
+            border-radius: 16px;
+            padding: 26px 28px;
+            margin-top: 24px;
+        }
+
+        .vk-hours-card h6 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .vk-hours-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #c8d0e0;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .vk-hours-row:last-child {
+            border-bottom: 0;
+        }
+
+        .vk-hours-row span:last-child {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media(max-width:768px) {
+            .vk-contact-cards {
+                padding: 70px 0 20px;
+            }
+
+            .vk-form-card {
+                padding: 30px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="topbar">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                    <div class="top-left-content d-flex align-items-center gap-3 gap-md-4 flex-wrap">
+                        <div class="top-contact">
+                            <span>
+                                <i class="bi bi-telephone-fill"></i>
+                                <a href="tel:+919980447824">+91 99804 47824</a>
+                                <span class="divider">|</span>
+                                <a href="tel:+919964202887">+91 866 040 8934 </a>
+                            </span>
+                            <a href="mailto:info@vinyasakitchen.com">
+                                <i class="bi bi-envelope-fill"></i>
+                                info@vinyasakitchen.com
+                            </a>
+                        </div>
+                        <div class="top-location d-none d-md-flex align-items-center">
+                            <i class="bi bi-geo-alt-fill me-1"></i>
+                            Mangalore
+                        </div>
+                    </div>
+                    <div class="top-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg vk-header">
+            <div class="container">
+                <a class="navbar-brand d-inline-flex align-items-center" href="./index.html">
+                    <img src="images/vinyasa_logo.png" alt="Vinyasa Logo">
+                    <div class="vk-brand-text ms-2">
+                        <span class="vk-brand-title">VINYASA</span>
+                        <span class="vk-brand-subtitle">KITCHEN EQUIPMENTS</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler vk-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="offcanvas offcanvas-top offcanvas-lg" id="menu">
+                    <div class="offcanvas-header d-lg-none">
+                        <h5>Menu</h5><button class="btn-close" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav ms-auto me-lg-4">
+                            <li class="nav-item"><a class="nav-link" href="./index.html">HOME</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./aboutus.html">ABOUT</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#">PRODUCTS</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="./product-cold-bain-marie.html">Cold Bain
+                                            Marie</a></li>
+                                    <li><a class="dropdown-item" href="./product-counters.html">Counter</a></li>
+                                    <li><a class="dropdown-item" href="./product-display-counters.html">Display
+                                            Counter</a></li>
+                                    <li><a class="dropdown-item" href="./product-gas-ranges.html">Gas Range</a></li>
+                                    <li><a class="dropdown-item" href="./product-hot-bain-marie.html">Hot Bain Marie</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="./product-shelf-and-rack.html">Shelf &amp;
+                                            Rack</a></li>
+                                    <li><a class="dropdown-item" href="./product-sink.html">Sink</a></li>
+                                    <li><a class="dropdown-item" href="./product-table.html">Table</a></li>
+                                    <li><a class="dropdown-item" href="./product-table-top-refrigerator.html">Table Top
+                                            Refrigerator</a></li>
+                                    <li><a class="dropdown-item" href="./product-trolley.html">Trolley</a></li>
+                                    <li><a class="dropdown-item" href="./product-vertical-refrigerator.html">Vertical
+                                            Refrigerator</a></li>
+                                    <li><a class="dropdown-item" href="./product-other-items.html">Other items</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="./services.html">SERVICES</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./clientele.html">CLIENTELE</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./catalog.html">CATALOG</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="#">CONTACT</a></li>
+                        </ul>
+                        <a class="quote-btn" href="#">Get a Free Quote</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- ===== PAGE BANNER ===== -->
+    <section class="vk-page-banner">
+        <div class="container position-relative">
+            <div class="vk-crumb">
+                <a href="./index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> Contact
+            </div>
+            <h1>Let's Build Your <span>Next Kitchen Together.</span></h1>
+            <p>Reach out for a free site visit, a product enquiry or a detailed quote — our team responds within one
+                business day.</p>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT INFO CARDS ===== -->
+    <section class="vk-contact-cards">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="vk-cc-card">
+                        <div class="vk-cc-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <h6>Visit Us</h6>
+                        <p>Vinyasa Kitchen Equipments,<br>Kudroli, Mangalore - 575013,<br>Karnataka, India</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="vk-cc-card">
+                        <div class="vk-cc-icon"><i class="fa-solid fa-phone"></i></div>
+                        <h6>Call Us</h6>
+                        <p><a href="tel:+919980447824">+91 99804 47824</a></p>
+                        <p><a href="tel:+919964202887">+91 99642 02887</a></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="vk-cc-card">
+                        <div class="vk-cc-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <h6>Email Us</h6>
+                        <p><a href="mailto:purchase@vinyasakitchen.com">purchase@vinyasakitchen.com</a></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="vk-cc-card">
+                        <div class="vk-cc-icon"><i class="fa-solid fa-clock"></i></div>
+                        <h6>Working Hours</h6>
+                        <p>Mon - Sat: 9:30 AM - 7:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FORM + MAP ===== -->
+    <section class="vk-contact-main">
+        <div class="container">
+            <div class="row g-5">
+
+                <div class="col-lg-7 reveal">
+                    <div class="vk-form-card">
+                        <div class="vk-eyebrow">Get in Touch</div>
+                        <h2 class="vk-heading mb-2">Send Us a <span>Message</span></h2>
+                        <p class="vk-sub mb-4">Tell us about your project and we'll get back with a tailored quote.</p>
+
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" placeholder="Your name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" placeholder="+91 00000 00000" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="you@company.com" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">I'm Interested In</label>
+                                    <select class="form-select">
+                                        <option selected>Select a category</option>
+                                        <option>Gas Ranges</option>
+                                        <option>Refrigerated Equipments</option>
+                                        <option>Display Counters</option>
+                                        <option>Food Service Equipments</option>
+                                        <option>Pantry Equipments</option>
+                                        <option>Preparation Equipments</option>
+                                        <option>Bar Counter</option>
+                                        <option>Tables &amp; Sinks</option>
+                                        <option>Trolleys &amp; Racks</option>
+                                        <option>Full Kitchen Project</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Message</label>
+                                    <textarea class="form-control" rows="5"
+                                        placeholder="Tell us about your kitchen project..."></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="vk-submit-btn">
+                                        Send Message <i class="fa-solid fa-paper-plane ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 reveal">
+                    <div class="vk-map-wrap">
+                        <iframe src="https://www.google.com/maps?q=Kudroli,Mangalore,Karnataka,575013&output=embed"
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="Vinyasa Kitchen Equipments Location">
+                        </iframe>
+                    </div>
+                    <!-- <div class="vk-hours-card">
+                        <h6><i class="fa-solid fa-clock me-2"></i>Business Hours</h6>
+                        <div class="vk-hours-row"><span>Monday - Friday</span><span>9:30 AM - 7:00 PM</span></div>
+                        <div class="vk-hours-row"><span>Saturday</span><span>9:30 AM - 5:00 PM</span></div>
+                        <div class="vk-hours-row"><span>Sunday</span><span>Closed</span></div>
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="vinyasa-footer" style="margin-top:100px;">
+        <div class="footer-pattern"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-company">
+                        <img src="images/vinyasa_logo1.png" class="footer-logo img-fluid"
+                            alt="Vinyasa Kitchen Equipments">
+                        <p class="footer-desc">
+                            Manufacturer of high quality commercial kitchen equipment in stainless steel for hotels,
+                            restaurants, industries and food service businesses.
+                        </p>
+                        <div class="footer-divider"></div>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="footer-box">
+                        <h5>QUICK LINKS</h5>
+                        <span class="footer-line"></span>
+                        <ul class="footer-menu">
+                            <li><a href="./index.html"><i class="fa-solid fa-angle-right"></i>Home</a></li>
+                            <li><a href="./aboutus.html"><i class="fa-solid fa-angle-right"></i>About Us</a></li>
+                            <li><a href="./services.html"><i class="fa-solid fa-angle-right"></i>Our Services</a></li>
+                            <li><a href="./catalog.html"><i class="fa-solid fa-angle-right"></i>Catalog</a></li>
+                            <li><a href="./clientele.html"><i class="fa-solid fa-angle-right"></i>Clientele</a></li>
+                            <li><a href="./contact.html"><i class="fa-solid fa-angle-right"></i>Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-box">
+                        <h5>PRODUCTS</h5>
+                        <span class="footer-line"></span>
+                        <ul class="footer-menu">
+                            <li><a class="dropdown-item" href="./product-cold-bain-marie.html"><i
+                                        class="fa-solid fa-angle-right"></i>Cold Bain Marie</a></li>
+                            <li><a class="dropdown-item" href="./product-counters.html"><i
+                                        class="fa-solid fa-angle-right"></i>Counter</a></li>
+                            <li><a class="dropdown-item" href="./product-display-counters.html"><i
+                                        class="fa-solid fa-angle-right"></i>Display Counter</a></li>
+                            <li><a class="dropdown-item" href="./product-gas-ranges.html"><i
+                                        class="fa-solid fa-angle-right"></i>Gas Range</a></li>
+                            <li><a class="dropdown-item" href="./product-hot-bain-marie.html"><i
+                                        class="fa-solid fa-angle-right"></i>Hot Bain Marie</a></li>
+                            <li><a class="dropdown-item" href="./product-shelf-and-rack.html"><i
+                                        class="fa-solid fa-angle-right"></i>Shelf &amp; Rack</a></li>
+                            <li><a class="dropdown-item" href="./product-sink.html"><i
+                                        class="fa-solid fa-angle-right"></i>Sink</a></li>
+                            <li><a class="dropdown-item" href="./product-table.html"><i
+                                        class="fa-solid fa-angle-right"></i>Table</a></li>
+                            <li><a class="dropdown-item" href="./product-table-top-refrigerator.html"><i
+                                        class="fa-solid fa-angle-right"></i>Table Top Refrigerator</a></li>
+                            <li><a class="dropdown-item" href="./product-trolley.html"><i
+                                        class="fa-solid fa-angle-right"></i>Trolley</a></li>
+                            <li><a class="dropdown-item" href="./product-vertical-refrigerator.html"><i
+                                        class="fa-solid fa-angle-right"></i>Vertical Refrigerator</a></li>
+                            <li><a class="dropdown-item" href="./product-other-items.html"><i
+                                        class="fa-solid fa-angle-right"></i>Other items</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5>CONTACT US</h5>
+                    <span class="footer-line"></span>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="contact-info">
+                                <p>Vinyasa Kitchen Equipments<br>Kudroli, Mangalore - 575013<br>Karnataka, India</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="contact-info">
+                                <p><a href="tel:+919980447824">+91 99804 47824</a><br><a href="tel:+919964202887">+91
+                                        99642 02887</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="contact-info">
+                                <p><a href="mailto:purchase@vinyasakitchen.com">purchase@vinyasakitchen.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <p><i class="fa-regular fa-copyright"></i> 2026 <a href="./index.html">Vinyasa Kitchen
+                                Equipments</a>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-6 text-lg-end">
+                        <p><i class="fa-solid fa-code"></i> Powered by <a href="https://bluelinecomputers.com/"
+                                target="_blank">Blueline Computers</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        window.addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 40));
+        if (window.innerWidth < 1200) {
+            document.querySelector('.dropdown>a').setAttribute('data-bs-toggle', 'dropdown');
+        }
+    </script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                }
+            });
+        }, { threshold: .2 });
+
+        document.querySelectorAll(".reveal").forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+    <script>
+        document.querySelector('.vk-form-card form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thanks for reaching out! Our team will get back to you within one business day.');
+            this.reset();
+        });
+    </script>
+
+</body>
+
+</html>
