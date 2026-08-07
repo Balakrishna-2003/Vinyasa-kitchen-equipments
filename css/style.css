@@ -289,6 +289,12 @@ header.scrolled .vk-header {
     padding-left: 34px;
 }
 
+.dropdown-item.active,.dropdown-item:active {
+    color: var(--haccent);
+    text-decoration: none;
+    background-color: #ebc194;
+}
+
 .vk-toggler {
     width: 54px;
     height: 54px;
@@ -356,7 +362,7 @@ header.scrolled .vk-header {
 
     .vk-header .navbar-nav {
         margin-left: auto !important;
-        margin-right: 25px !important;
+        /* margin-right: 25px !important; */
     }
 }
 
