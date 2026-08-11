@@ -203,8 +203,31 @@ header.scrolled .topbar {
 }
 
 header.scrolled .vk-header {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
+}
+
+header.scrolled .vk-header .navbar-brand img {
+    width: 48px !important;
+    height: 48px !important;
+}
+
+header.scrolled .vk-header .vk-brand-title {
+    font-size: 16px;
+}
+
+header.scrolled .vk-header .vk-brand-subtitle {
+    font-size: 8px;
+}
+
+header.scrolled .vk-header .nav-link {
+    padding: 6px 12px !important;
+}
+
+header.scrolled .vk-header .quote-btn {
+    padding: 5px 14px !important;
+    font-size: 13px;
 }
 
 /* Logo */
@@ -1668,6 +1691,7 @@ RESPONSIVE
 =====================================*/
 
 .vk-product-card {
+    cursor: pointer;
 
     position: relative;
 
@@ -4463,10 +4487,17 @@ COMPANY
 
 .footer-logo {
 
-    /* width:330px; */
+display: block;
 
-    margin-bottom: 25px;
+margin-left: auto;
 
+margin-right: auto;
+
+width: 100px;
+
+margin-bottom: 25px;
+
+/* text-align: center; */
 }
 
 .footer-desc {
@@ -5206,8 +5237,17 @@ BOTTOM BAR
 }
 
 .vk-header .navbar-brand img {
-    max-height: 120px;
-    width: auto;
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.vk-brand-title,
+.vk-brand-subtitle,
+.vk-header .nav-link,
+.vk-header .quote-btn {
+    transition: all 0.3s ease;
 }
 
 .vk-brand-text {
@@ -5220,7 +5260,7 @@ BOTTOM BAR
 
 .vk-brand-title {
     font-family: var(--font1);
-    font-size: 20px;
+    font-size: 33px;
     font-weight: 800;
     color: #0c4887;
     letter-spacing: 1.5px;
@@ -5229,7 +5269,7 @@ BOTTOM BAR
 
 .vk-brand-subtitle {
     font-family: var(--font1);
-    font-size: 9.5px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--accent);
     letter-spacing: 2px;
